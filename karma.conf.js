@@ -21,14 +21,14 @@ module.exports = function (config) {
 
       // our spec files - in order of the README
       'specs/client/authControllerSpec.js',
-      'specs/client/servicesSpec.js',
+      'specs/client/servicesSpec.js'/*,
       'specs/client/linksControllerSpec.js',
       'specs/client/shortenControllerSpec.js',
-      'specs/client/routingSpec.js'
+      'specs/client/routingSpec.js'*/
     ],
 
     // test results reporter to use
-    reporters: ['nyan', 'unicorn'],
+    reporters: ['progress', 'nyan'],
 
     // start these browsers. PhantomJS will load up in the background
     browsers: ['PhantomJS'],
