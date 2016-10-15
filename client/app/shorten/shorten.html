@@ -1,5 +1,9 @@
 <ng-include src="'/app/partials/nav.html'"></ng-include>
-<div id='container'>
-  <input type="text" ng-model="link" ng-change="updateValidIndicators(link)" ng-class="validClass">
-  <button ng-click="addLink(link)">create</button>
+<div class='container'>
+  <form name="shortenForm" ng-submit="addLink(link)" novalidate>
+    <div class='form-group' ng-class="{'has-error': shortenForm.link.$invalid && !shortenForm.link.$pristine}">
+      <input class='form-control' name="link" type="text" ng-model="link" ng-change="updateValidIndicators(link)" ng-pattern='/^(https?:\/\/)([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/'>
+    </div>
+    <button class='btn btn-primary' ng-disabled="shortenForm.$invalid">Create</button>
+  </form>
 </div>
