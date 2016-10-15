@@ -17,7 +17,7 @@ module.exports = {
     var user;
 
     if (!token) {
-      return res.send(403); // send forbidden if a token is not provided
+      return res.send(401); // send unauthorized if a token is not provided
     }
 
     try {
