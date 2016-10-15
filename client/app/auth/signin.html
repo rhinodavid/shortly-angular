@@ -1,9 +1,17 @@
 <div id='signin'>
-  <h1>Sign In</h1>
+  <h3>Sign In</h3>
   <form name="signinForm" ng-submit='signin()' novalidate>
-    <input type='text' ng-model='user.username' ng-required='true' ng-minlength='3' ng-maxlength='64' novalidate>
-    <input type="password" ng-model='user.password' ng-required='true' ng-minlength='3' ng-maxlength='64' novalidate>
+  <div class='form-group' ng-class="{'has-error': signinForm.username.$invalid && !signinForm.username.$pristine}">
+    <label for="username">Username</label>
+    <input name='username' class='form-control' type='text' ng-model='user.username' ng-required='true' ng-minlength='3' ng-maxlength='64' novalidate>
+  </div>
+  <div class='form-group' ng-class="{'has-error': signinForm.password.$invalid && !signinForm.password.$pristine}">
+  <label for="password">Password</label>
+    <input class='form-control' name="password" type="password" ng-model='user.password' ng-required='true' ng-minlength='3' ng-maxlength='64' novalidate>
+  </div>
     <button class='btn btn-primary' ng-disabled='signinForm.$invalid'>Sign In</button>
   </form>
-  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+  <p>
+    <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+   </p>
 </div>
