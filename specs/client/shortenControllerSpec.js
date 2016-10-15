@@ -34,10 +34,6 @@ describe('ShortenController', function () {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should have a link property on the $scope', function () {
-    expect($scope.link).to.be.an('object');
-  });
-
   it('should have a addLink method on the $scope', function () {
     expect($scope.addLink).to.be.a('function');
   });
