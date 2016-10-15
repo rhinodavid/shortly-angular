@@ -35,7 +35,7 @@
     "gulp": "^3.8.5",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
-    "gulp-nodemon": "^2.0.6",
+    "gulp-nodemon": "^2.2.1",
     "gulp-shell": "^0.5.2",
     "karma": "^0.13.15",
     "karma-babel-preprocessor": "^6.0.1",
