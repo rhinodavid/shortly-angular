@@ -6,10 +6,15 @@
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
-  <body class='container'>
-    <h1>Shortly</h1>
+  <body>
+    <div class='container'>
+      <div class='page-header'>
+        <h1>Shortly <small>your url shortener</small></h1>
+      </div>
+    </div>
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+
     <div ng-view></div>
 
     <script src="lib/angular/angular.js"></script>
@@ -20,5 +25,7 @@
     <script src="app/shorten/shorten.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/app.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
   </body>
 </html>
