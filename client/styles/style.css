@@ -113,6 +113,17 @@ input[type=url]:focus {
   outline: none;
 }
 
+input.invalid, input.invalid:focus {
+  border-color: #e9322d;
+  box-shadow: 0 0 6px #f8b9b7;
+  outline: none;
+}
+
+input.valid, input.valid:focus {
+  border-color: green;
+  box-shadow: 0 0 6px #393;
+  outline: none;
+}
 
 .error {
   border: red solid 4px;

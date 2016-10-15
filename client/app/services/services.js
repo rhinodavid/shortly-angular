@@ -26,12 +26,13 @@ angular.module('shortly.services', [])
 
   var validateUrl = function(url) {
     var validUrlRegEx = /^(https?:\/\/)([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-    return validUrlRegEx.text(url);
+    return validUrlRegEx.test(url);
   };
 
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    validateUrl: validateUrl
   };
 
 })
