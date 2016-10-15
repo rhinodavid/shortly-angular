@@ -64,6 +64,31 @@ describe('Services', function () {
       $httpBackend.flush();
     });
 
+    describe('validating urls', function() {
+      it('should return false for malformed urls', function() {
+        var badUrls = [
+          'htt://www.google.com',
+          'www.google.com', //http is required
+          'http://www.g',
+          'http://google'
+        ];
+        badUrls.forEach(function(url) {
+          expect(Links.validateUrl(url)).to.equal(false);
+        });
+      });
+
+      it('should return true for valid urls', function() {
+        var validUrls = [
+          'http://www.google.com',
+          'https://www.google.com',
+          'http://www.google.com/mail',
+        ];
+        validUrls.forEach(function(url) {
+          expect(Links.validateUrl(url)).to.equal(true);
+        });
+      });
+    });
+
   });
 
 });
