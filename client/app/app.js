@@ -58,10 +58,15 @@ angular.module('shortly', [
   // if it's not valid, we then redirect back to signin/signup
 
   $rootScope.$on('$routeChangeStart', function (evt, next, current) {
+    if ($location.path() === '/logout') {
+      Auth.signout();
+    }
     if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
       $location.path('/signin');
     }
   });
+
+
 }).run(function($rootScope, $location) {
   $location.path('/links');
 });
