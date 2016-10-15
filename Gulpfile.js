@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 var babel = require('gulp-babel');
 var nodemon = require('gulp-nodemon');
+var mocha = require('gulp-mocha');
 var KarmaServer = require('karma').Server;
 var browserSync = require('browser-sync').create();
 
@@ -53,6 +54,12 @@ gulp.task('karma', function (done) {
   }, done).start();
 });
 
+gulp.task('mocha', function (done) {
+  gulp.src('specs/server/serverSpec.js', {read: false})
+    .pipe(mocha({reporter: 'spec'}));
+});
+
+gulp.task('test', ['mocha', 'karma']);
 // Use ES5 by default
 gulp.task('default', ['start']);
 
